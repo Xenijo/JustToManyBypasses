@@ -1,6 +1,6 @@
 local Bypasses = {}
 
-Bypasses:Dh()
+function Bypasses:Dh()
 print("Get Balls")
 end
 
