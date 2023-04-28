@@ -31,7 +31,9 @@ return nil
     if (not checkcaller() and getfenv(2).crash) then
         local fenv = getfenv(2)
         fenv.crash = function() end
+         if _G.Settings.Logs == true then 
        warn("Game tried to crash players")
+          end
         setfenv(2, fenv)
     end
     return Fly(self, ...)
