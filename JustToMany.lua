@@ -40,4 +40,15 @@ return nil
 end)
 end
 
+if _G.Settings.Adonis then 
+  local Namecall
+Namecall = hookmetamethod(game, '__namecall', function(self, ...)
+   local Caller = tostring(getcallingscript())
+   local Method = getnamecallmethod()
+   if Caller == 'ClientMover'  then
+       return nil
+   end
+   return Namecall(self, ...)
+end)
+  end
 return Bypasses
