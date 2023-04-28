@@ -1,7 +1,5 @@
 local Bypasses = {}
-_G.Settings = {
-  Logs = true 
-}
+
 
 function Bypasses:Dh()
   local Bypass
