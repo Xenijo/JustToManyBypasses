@@ -1,22 +1,23 @@
 local Bypasses = {}
 _G.Settings = {
-_G.Logs = true 
-
+  Logs = true 
 }
 
 function Bypasses:Dh()
-local Bypass
-Bypass =  hookmetamethod(game, "__namecall", function(self,...)
-        local Args = {...}
-if not checkcaller() and tostring(self.Name) == "MainEvent" and  rawequal(Args[1],"TeleportDetect") then 
-        if _G.Settings.Logs == true then 
-          warn(Bypassed: "..Args[1])
-          end
-return nil
+  local Bypass
+  Bypass = hookmetamethod(game, "__namecall", function(self, ...)
+    local Args = {...}
+    if not checkcaller() and tostring(self.Name) == "MainEvent" and rawequal(Args[1], "TeleportDetect") then 
+      if _G.Settings.Logs == true then 
+        warn("Bypassed: "..Args[1])
+      end
+      return nil
     end
     
     return Bypass(self, ...)
-end)
+  end)
+end
+
 
 
 local Fly
@@ -24,8 +25,8 @@ Fly =  hookmetamethod(game, "__namecall", function(self,...)
         local Args = {...}
 if not checkcaller() and tostring(self.Name) == "MainEvent" and  rawequal(Args[1],"CHECKER_1")  or  rawequal(Args[1],"OneMoreTime")  then 
   if _G.Settings.Logs == true then 
-          warn(Bypassed: "..Args[1])
-          end
+        warn("Bypassed: "..Args[1])
+      end
 return nil
     end
         
